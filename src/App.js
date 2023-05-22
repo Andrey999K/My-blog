@@ -7,12 +7,16 @@ import MyPosts from "./pages/MyPosts";
 import CreatePost from "./pages/CreatePost";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
+import Post from "./components/Post";
 
 function App() {
   const homepage = process.env.PUBLIC_URL;
   return (
     <div className="App bg-[#F2F4F3] min-h-screen">
       <Header/>
+      <div className="w-[695px] mx-auto my-12">
+        <Post/>
+      </div>
       <Switch>
         <Route path={homepage} exact component={Homepage} />
         <Route path={`${homepage}/login`} component={Login} />
