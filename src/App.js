@@ -5,6 +5,8 @@ import Login from "./pages/Login";
 import PostPage from "./pages/PostPage";
 import MyPosts from "./pages/MyPosts";
 import CreatePost from "./pages/CreatePost";
+import Redirect from "react-router-dom/es/Redirect";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const homepage = process.env.PUBLIC_URL;
@@ -16,6 +18,8 @@ function App() {
         <Route path={`${homepage}/post/:pageId`} component={PostPage} />
         <Route path={`${homepage}/myPosts`} component={MyPosts} />
         <Route path={`${homepage}/createPost`} component={CreatePost} />
+        <Route path={`${homepage}/404`} component={NotFound} />
+        <Redirect to={`${homepage}/404`} />
       </Switch>
     </div>
   );
