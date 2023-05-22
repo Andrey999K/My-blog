@@ -6,13 +6,13 @@ import PostPage from "./pages/PostPage";
 import MyPosts from "./pages/MyPosts";
 import CreatePost from "./pages/CreatePost";
 import NotFound from "./pages/NotFound";
-import BigButton from "./components/BigButton";
+import Header from "./components/Header";
 
 function App() {
   const homepage = process.env.PUBLIC_URL;
   return (
-    <div className="App">
-      <BigButton>Войти</BigButton>
+    <div className="App bg-[#F2F4F3] min-h-screen">
+      <Header/>
       <Switch>
         <Route path={homepage} exact component={Homepage} />
         <Route path={`${homepage}/login`} component={Login} />
