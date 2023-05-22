@@ -4,6 +4,7 @@ import { PaletteTree } from "./palette";
 import Index from "../components/Logo";
 import BigButton from "../components/BigButton";
 import Header from "../components/Header";
+import Avatar from "../components/Avatar";
 
 const ComponentPreviews = () => {
   return (
@@ -16,6 +17,9 @@ const ComponentPreviews = () => {
       </ComponentPreview>
       <ComponentPreview path="/Header">
         <Header/>
+      </ComponentPreview>
+      <ComponentPreview path="/Avatar">
+        <Avatar/>
       </ComponentPreview>
     </Previews>
   );
