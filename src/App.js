@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import PostPage from "./pages/PostPage";
 import MyPosts from "./pages/MyPosts";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
   const homepage = process.env.PUBLIC_URL;
@@ -14,6 +15,7 @@ function App() {
         <Route path={`${homepage}/login`} component={Login} />
         <Route path={`${homepage}/post/:pageId`} component={PostPage} />
         <Route path={`${homepage}/myPosts`} component={MyPosts} />
+        <Route path={`${homepage}/createPost`} component={CreatePost} />
       </Switch>
     </div>
   );
