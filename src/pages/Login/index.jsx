@@ -1,8 +1,9 @@
 import React from "react";
+import Icon from "../../components/Icon";
 
 const Login = () => {
   return (
-    <div className="w-full h-full flex justify-center items-center m-auto">
+    <div className="w-full h-full flex justify-center mx-auto mt-8 md:mt-12">
       <form className="max-w-[440px] w-full flex flex-col items-center gap-4 p-5 bg-white rounded">
         <h2 className="text-2xl font-bold">Вход</h2>
         <input
@@ -15,17 +16,17 @@ const Login = () => {
           placeholder="Пароль"
           type="password"
         />
-        <button className="rounded flex justify-center items-center text-white bg-my-green-200 p-2 w-full">Войти</button>
+        <button className="rounded flex justify-center items-center text-white bg-my-green-200 p-2 w-full hover:bg-my-green-300">Войти</button>
         <span className="text-sm">Или войдите с помощью других сервисов</span>
         <div className="flex gap-5">
-          <div>
-            1
+          <div role="button">
+            <Icon name="google" />
           </div>
-          <div>
-            1
+          <div role="button">
+            <Icon name="vk" />
           </div>
-          <div>
-            1
+          <div role="button">
+            <Icon name="github" />
           </div>
         </div>
       </form>
