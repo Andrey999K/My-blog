@@ -1,3 +1,5 @@
+Demo: https://andrey999k.github.io/graduation-project-result-school/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
