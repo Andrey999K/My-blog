@@ -6,20 +6,23 @@ import PropTypes from "prop-types";
 const Post = ({ post }) => {
   const { id, user, date, title, description, image, likes, comments } = post;
   const { nickname } = user;
+  const homepage = process.env.PUBLIC_URL;
   return (
     <div className="p-6 bg-white rounded-xl flex flex-col gap-4 text-base">
       <div className="flex justify-between w-full">
         <div className="flex gap-3 items-center">
-          <Avatar/>
-          <span>{nickname}</span>
-          <span className="text-sm text-gray-500">{date}</span>
+          <Link to={homepage} className="flex gap-3 items-center">
+            <Avatar/>
+            <span>{nickname}</span>
+          </Link>
+          <Link to={`${homepage}/post/${id}`} className="text-sm text-gray-500">{date}</Link>
         </div>
         <button className="py-1 px-5 bg-my-green-200 text-white rounded-xl hover:bg-my-green-300 duration-200">Подписаться</button>
       </div>
       {!!title && <p className="font-bold text-xl">{title}</p>}
       {!!description && <p>{description}</p>}
       <Link
-        to={`${process.env.PUBLIC_URL}/post/${id}`}
+        to={`${homepage}/post/${id}`}
         className="text-gray-500 cursor-pointer font-medium hover:text-my-green-200"
       >
         Подробнее...
@@ -28,7 +31,7 @@ const Post = ({ post }) => {
         <div className="rounded-xl overflow-hidden">
           <img
             className="m-0 w-full"
-            src={`${process.env.PUBLIC_URL}/images/${image}`}
+            src={`${homepage}/images/${image}`}
             alt="Картинка"
           />
         </div>

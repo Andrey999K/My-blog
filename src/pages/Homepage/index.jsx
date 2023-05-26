@@ -44,7 +44,7 @@ const Homepage = () => {
     }
   ];
   return (
-    <div className="w-[695px] mx-auto my-12">
+    <div className="w-[695px] my-12">
       <PostsList data={posts} />
     </div>
   );

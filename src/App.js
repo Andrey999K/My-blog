@@ -13,15 +13,17 @@ function App() {
   return (
     <div className="App bg-[#F2F4F3] min-h-screen flex flex-col">
       <Header/>
-      <Switch>
-        <Route path={homepage} exact component={Homepage} />
-        <Route path={`${homepage}/login`} component={Login} />
-        <Route path={`${homepage}/post/:pageId`} component={PostPage} />
-        <Route path={`${homepage}/myPosts`} component={MyPosts} />
-        <Route path={`${homepage}/createPost`} component={CreatePost} />
-        <Route path={`${homepage}/404`} component={NotFound} />
-        <Redirect to={`${homepage}/404`} />
-      </Switch>
+      <div className="mx-auto">
+        <Switch>
+          <Route path={homepage} exact component={Homepage} />
+          <Route path={`${homepage}/login`} component={Login} />
+          <Route path={`${homepage}/post/:pageId`} component={PostPage} />
+          <Route path={`${homepage}/myPosts`} component={MyPosts} />
+          <Route path={`${homepage}/createPost`} component={CreatePost} />
+          <Route path={`${homepage}/404`} component={NotFound} />
+          <Redirect to={`${homepage}/404`} />
+        </Switch>
+      </div>
     </div>
   );
 }

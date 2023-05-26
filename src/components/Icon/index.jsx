@@ -14,7 +14,7 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  className: "w-[32px] h-[32px]"
+  className: "w-[24px] h-[24px]"
 };
 
 export default Icon;

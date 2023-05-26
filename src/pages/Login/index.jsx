@@ -20,13 +20,13 @@ const Login = () => {
         <span className="text-sm">Или войдите с помощью других сервисов</span>
         <div className="flex gap-5">
           <div role="button">
-            <Icon name="google" />
+            <Icon name="google" className="w-[32px] h-[32px]" />
           </div>
           <div role="button">
-            <Icon name="vk" />
+            <Icon name="vk" className="w-[32px] h-[32px]" />
           </div>
           <div role="button">
-            <Icon name="github" />
+            <Icon name="github" className="w-[32px] h-[32px]" />
           </div>
         </div>
       </form>
