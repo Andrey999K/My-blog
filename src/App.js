@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App bg-[#F2F4F3] min-h-screen flex flex-col">
       <Header/>
-      <div className="mx-auto">
+      <div className="mx-auto w-full max-w-screen-xl px-8 flex justify-center">
         <Switch>
           <Route path={homepage} exact component={Homepage} />
           <Route path={`${homepage}/login`} component={Login} />
