@@ -17,7 +17,7 @@ function App() {
         <Switch>
           <Route path={homepage} exact component={Homepage} />
           <Route path={`${homepage}/login`} component={Login} />
-          <Route path={`${homepage}/post/:pageId`} component={PostPage} />
+          <Route path={`${homepage}/post/:postId`} component={PostPage} />
           <Route path={`${homepage}/myPosts`} component={MyPosts} />
           <Route path={`${homepage}/createPost`} component={CreatePost} />
           <Route path={`${homepage}/404`} component={NotFound} />

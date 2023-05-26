@@ -21,6 +21,8 @@ module.exports = {
   rules: {
     "semi": [2, "always"],
     "space-before-function-paren": ["error", "never"],
-    "quotes": ["error", "double", { "allowTemplateLiterals": true }]
+    "quotes": ["error", "double", { "allowTemplateLiterals": true }],
+    "no-multiple-empty-lines": "off",
+    "no-trailing-spaces": "off"
   }
 };
