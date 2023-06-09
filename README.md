@@ -1,4 +1,4 @@
-Demo: https://andrey999k.github.io/My-blog/
+Demo: https://andrey999k.github.io/my-blog/
 
 # Getting Started with Create React App
 
