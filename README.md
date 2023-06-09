@@ -1,4 +1,4 @@
-Demo: https://andrey999k.github.io/graduation-project-result-school/
+Demo: https://andrey999k.github.io/My-blog/
 
 # Getting Started with Create React App
 
