@@ -1,13 +1,41 @@
 import React from "react";
 import Avatar from "../../components/Avatar";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SubscriptionButton from "../../components/SubscriptionButton";
 import Icon from "../../components/Icon";
 import Like from "../../components/Like";
 
 const PostPage = () => {
   const homepage = process.env.PUBLIC_URL;
-  const { postId } = useParams();
+  const commets = [
+    {
+      id: 1,
+      user: {
+        id: 123,
+        username: "tashbenbetov"
+      },
+      date: "03.12.2018",
+      text: "Прочитал про первый хук и дальше уже читать не стал. Это на уровне старого мема про подключение жуквери для суммирования двух переменных. То есть это на столько простая реализация, что вообще не понятно как она может потянуть на лишнюю зависимость. Но с модалками очень много тонкостей, включая скрытие скролла у документа, закрытие окна по клику в любой части документа за пределами модалки (если она не на весь экран) и т.д. и т.п. Вот если бы хоть часть из этих моментов перекрывалась, то еще имело смысл. А так? Ну такое…"
+    },
+    {
+      id: 2,
+      user: {
+        id: 123,
+        username: "tashbenbetov"
+      },
+      date: "03.12.2018",
+      text: "Прочитал про первый хук и дальше уже читать не стал. Это на уровне старого мема про подключение жуквери для суммирования двух переменных. То есть это на столько простая реализация, что вообще не понятно как она может потянуть на лишнюю зависимость. Но с модалками очень много тонкостей, включая скрытие скролла у документа, закрытие окна по клику в любой части документа за пределами модалки (если она не на весь экран) и т.д. и т.п. Вот если бы хоть часть из этих моментов перекрывалась, то еще имело смысл. А так? Ну такое…"
+    },
+    {
+      id: 3,
+      user: {
+        id: 123,
+        username: "tashbenbetov"
+      },
+      date: "03.12.2018",
+      text: "Прочитал про первый хук и дальше уже читать не стал. Это на уровне старого мема про подключение жуквери для суммирования двух переменных. То есть это на столько простая реализация, что вообще не понятно как она может потянуть на лишнюю зависимость. Но с модалками очень много тонкостей, включая скрытие скролла у документа, закрытие окна по клику в любой части документа за пределами модалки (если она не на весь экран) и т.д. и т.п. Вот если бы хоть часть из этих моментов перекрывалась, то еще имело смысл. А так? Ну такое…"
+    }
+  ];
   return (
     <div className="w-full max-w-screen-lg ml-auto my-12">
       <div className="bg-white rounded p-5 flex flex-col gap-5">
@@ -65,44 +93,22 @@ const PostPage = () => {
       </div>
     </div>
       <div className="mt-14 p-5 bg-white rounded flex flex-col gap-4">
-        <h3 className="font-medium">Комментарии 19</h3>
+        <h3 className="font-medium">Комментарии {commets.length}</h3>
         <ul className="flex flex-col gap-4">
-          <li>
-            <div className="flex gap-3 items-center">
-              <Link to={homepage} className="flex gap-3 items-center">
-                <Avatar/>
-                <span>tashbenbetov</span>
-              </Link>
-              <Link to={`${homepage}/post/${postId}`} className="text-sm text-gray-500">03.12.2018</Link>
-            </div>
-            <p className="mt-2">
-              Прочитал про первый хук и дальше уже читать не стал. Это на уровне старого мема про подключение жуквери для суммирования двух переменных. То есть это на столько простая реализация, что вообще не понятно как она может потянуть на лишнюю зависимость. Но с модалками очень много тонкостей, включая скрытие скролла у документа, закрытие окна по клику в любой части документа за пределами модалки (если она не на весь экран) и т.д. и т.п. Вот если бы хоть часть из этих моментов перекрывалась, то еще имело смысл. А так? Ну такое…
-            </p>
-          </li>
-          <li>
-            <div className="flex gap-3 items-center">
-              <Link to={homepage} className="flex gap-3 items-center">
-                <Avatar/>
-                <span>tashbenbetov</span>
-              </Link>
-              <Link to={`${homepage}/post/${postId}`} className="text-sm text-gray-500">03.12.2018</Link>
-            </div>
-            <p className="mt-2">
-              Прочитал про первый хук и дальше уже читать не стал. Это на уровне старого мема про подключение жуквери для суммирования двух переменных. То есть это на столько простая реализация, что вообще не понятно как она может потянуть на лишнюю зависимость. Но с модалками очень много тонкостей, включая скрытие скролла у документа, закрытие окна по клику в любой части документа за пределами модалки (если она не на весь экран) и т.д. и т.п. Вот если бы хоть часть из этих моментов перекрывалась, то еще имело смысл. А так? Ну такое…
-            </p>
-          </li>
-          <li>
-            <div className="flex gap-3 items-center">
-              <Link to={homepage} className="flex gap-3 items-center">
-                <Avatar/>
-                <span>tashbenbetov</span>
-              </Link>
-              <Link to={`${homepage}/post/${postId}`} className="text-sm text-gray-500">03.12.2018</Link>
-            </div>
-            <p className="mt-2">
-              Прочитал про первый хук и дальше уже читать не стал. Это на уровне старого мема про подключение жуквери для суммирования двух переменных. То есть это на столько простая реализация, что вообще не понятно как она может потянуть на лишнюю зависимость. Но с модалками очень много тонкостей, включая скрытие скролла у документа, закрытие окна по клику в любой части документа за пределами модалки (если она не на весь экран) и т.д. и т.п. Вот если бы хоть часть из этих моментов перекрывалась, то еще имело смысл. А так? Ну такое…
-            </p>
-          </li>
+          {commets.map(comment => (
+            <li key={`comment_${comment.id}`}>
+              <div className="flex gap-3 items-center">
+                <Link to={`${homepage}/user/${comment.user.id}`} className="flex gap-3 items-center">
+                  <Avatar/>
+                  <span>{comment.user.username}</span>
+                </Link>
+                <Link to={`${homepage}/user/${comment.user.id}`} className="text-sm text-gray-500">{comment.date}</Link>
+              </div>
+              <p className="mt-2">
+                {comment.text}
+              </p>
+            </li>
+          ))}
         </ul>
         <div className="flex justify-center items-center">
           <button className="py-1 px-5 bg-my-green-200 text-white rounded-lg hover:bg-my-green-300 duration-200">Загрузить ещё</button>
