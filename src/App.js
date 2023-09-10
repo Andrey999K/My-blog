@@ -11,9 +11,9 @@ import Header from "./components/Header";
 function App() {
   const homepage = process.env.PUBLIC_URL;
   return (
-    <div className="App bg-[#F2F4F3] min-h-screen flex flex-col">
+    <div className="App bg-[#F2F4F3] min-h-[100dvh] flex flex-col">
       <Header/>
-      <div className="mx-auto w-full max-w-screen-xl px-8 flex justify-center">
+      <div className="mx-auto w-full h-full max-w-screen-xl px-8 flex justify-center">
         <Switch>
           <Route path={homepage} exact component={Homepage} />
           <Route path={`${homepage}/login`} component={Login} />
