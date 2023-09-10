@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../Logo";
-import BigButton from "../BigButton";
-import Icon from "../Icon";
+import BigButton from "../../common/BigButton";
+import Icon from "../../common/Icon";
 import { Link, useLocation } from "react-router-dom";
 import Search from "../Search";
 

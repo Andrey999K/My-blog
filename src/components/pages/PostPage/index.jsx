@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Avatar from "../../components/Avatar";
+import Avatar from "../../common/Avatar";
 import { Link } from "react-router-dom";
-import SubscriptionButton from "../../components/SubscriptionButton";
-import Icon from "../../components/Icon";
-import Like from "../../components/Like";
-import Loader from "../../components/Loader";
+import SubscriptionButton from "../../common/SubscriptionButton";
+import Icon from "../../common/Icon";
+import Like from "../../common/Like";
+import Loader from "../../ui/Loader";
 
 const PostPage = () => {
   const [data, setData] = useState(null);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import PostsList from "../../components/PostsList";
-import Loader from "../../components/Loader";
+import PostsList from "../../common/PostsList";
+import Loader from "../../ui/Loader";
 
 const Homepage = () => {
   const [posts, setPosts] = useState(null);

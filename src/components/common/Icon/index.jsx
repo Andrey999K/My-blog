@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import sprite from "../../img/sprite.svg";
+import sprite from "../../../img/sprite.svg";
 
 const Icon = ({ name, className }) => (
   <svg className={`icon ${className}`}>

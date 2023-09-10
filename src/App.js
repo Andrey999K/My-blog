@@ -1,12 +1,12 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import Login from "./pages/Login";
-import PostPage from "./pages/PostPage";
-import MyPosts from "./pages/MyPosts";
-import CreatePost from "./pages/CreatePost";
-import NotFound from "./pages/NotFound";
-import Header from "./components/Header";
+import Homepage from "./components/pages/Homepage";
+import Login from "./components/pages/Login";
+import PostPage from "./components/pages/PostPage";
+import MyPosts from "./components/pages/MyPosts";
+import CreatePost from "./components/pages/CreatePost";
+import NotFound from "./components/pages/NotFound";
+import Header from "./components/ui/Header";
 
 function App() {
   const homepage = process.env.PUBLIC_URL;
