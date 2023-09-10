@@ -6,7 +6,7 @@ import SubscriptionButton from "../SubscriptionButton";
 import Icon from "../Icon";
 import Like from "../Like";
 
-const Post = ({ post }) => {
+const Post = ({ post, my }) => {
   const { id, user, date, title, description, image, likes, comments } = post;
   const { nickname } = user;
   const homepage = process.env.PUBLIC_URL;
@@ -20,7 +20,18 @@ const Post = ({ post }) => {
           </Link>
           <Link to={`${homepage}/post/${id}`} className="text-sm text-gray-500">{date}</Link>
         </div>
-        <SubscriptionButton/>
+        {my
+          ? (
+            <div className="flex items-center">
+              <button className="inline">
+                <Icon name="menu" />
+              </button>
+            </div>
+            )
+          : (
+            <SubscriptionButton/>
+            )
+        }
       </div>
       {!!title && <p className="font-bold text-xl">{title}</p>}
       {!!description && <p>{description}</p>}
@@ -68,7 +79,8 @@ Post.propTypes = {
       nickname: PropTypes.string.isRequired,
       avatar: PropTypes.string
     })
-  }).isRequired
+  }).isRequired,
+  my: PropTypes.bool.isRequired
 };
 
 export default Post;
