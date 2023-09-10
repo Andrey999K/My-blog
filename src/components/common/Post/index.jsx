@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 import SubscriptionButton from "../SubscriptionButton";
 import Icon from "../Icon";
 import Like from "../Like";
+import "react-tooltip/dist/react-tooltip.css";
+import PostMenu from "../../PostMenu";
 
 const Post = ({ post, my }) => {
   const { id, user, date, title, description, image, likes, comments } = post;
@@ -23,9 +25,7 @@ const Post = ({ post, my }) => {
         {my
           ? (
             <div className="flex items-center">
-              <button className="inline">
-                <Icon name="menu" />
-              </button>
+              <PostMenu />
             </div>
             )
           : (

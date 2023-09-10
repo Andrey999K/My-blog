@@ -10,7 +10,7 @@ const Header = () => {
   const homepage = process.env.PUBLIC_URL;
   const isLoginPage = location.pathname === `${homepage}/login`;
   return (
-    <header className="bg-my-green-200 py-2 sticky top-0">
+    <header className="bg-my-green-200 py-2 sticky top-0 z-[9999]">
       <div className="flex justify-between items-center w-full max-w-screen-xl px-8 mx-auto">
         {!isLoginPage &&
           <ul className="inline-flex flex-col absolute top-32">
