@@ -5,8 +5,7 @@ import PropTypes from "prop-types";
 import SubscriptionButton from "../SubscriptionButton";
 import Icon from "../Icon";
 import Like from "../Like";
-import "react-tooltip/dist/react-tooltip.css";
-import PostMenu from "../../PostMenu";
+import PostMenu from "../../ui/PostMenu";
 
 const Post = ({ post, my }) => {
   const { id, user, date, title, description, image, likes, comments } = post;
