@@ -8,6 +8,7 @@ module.exports = {
         current: 'currentColor',
         'white': '#ffffff',
         'my-green': {
+          50: '#92E791FF',
           100: '#5CDF59',
           200: '#04AD01',
           300: '#3cbd33',

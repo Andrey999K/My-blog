@@ -2,14 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const BigButton = ({ children, link, url, className }) => {
-  const classes = "flex justify-center items-center text-xs md:text-sm py-2 px-4 md:py-3 md:px-6 hover:bg-my-green-300 duration-200 bg-my-green-400 text-white font-bold rounded" + (className ? " " + className : "");
+const BigButton = ({ children, link, url, className, disabled }) => {
+  const classes = "flex justify-center items-center text-xs md:text-sm py-2 px-4 " +
+    `md:py-3 md:px-6 duration-200 ${disabled ? "bg-my-green-50" : "bg-my-green-400 hover:bg-my-green-300"} text-white font-bold rounded` + (className ? " " + className : "");
   if (link) return <Link to={url} className={classes}>{children}</Link>;
-  return <button className={classes}>{children}</button>;
+  return <button className={classes} disabled={disabled}>{children}</button>;
 };
 
 BigButton.defaultProps = {
-  link: false
+  link: false,
+  disabled: false
 };
 
 BigButton.propTypes = {
@@ -20,7 +22,8 @@ BigButton.propTypes = {
       return new Error("Url is required if link is true");
     }
   },
-  className: PropTypes.string
+  className: PropTypes.string,
+  disabled: PropTypes.bool
 };
 
 export default BigButton;
