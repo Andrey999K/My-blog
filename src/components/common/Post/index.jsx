@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Avatar from "../Avatar";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -9,35 +9,43 @@ import PostMenu from "../../ui/PostMenu";
 import ModalWindow from "../ModalWindow";
 import EditorPost from "../EditorPost";
 import BigButton from "../BigButton";
-import { EditorState, convertToRaw } from "draft-js";
-import { stateFromHTML } from "draft-js-import-html";
+import { EditorState, convertFromHTML, convertToRaw } from "draft-js";
+import ContentState from "draft-js/lib/ContentState";
 import draftToHtml from "draftjs-to-html";
+import httpService from "../../../services/http.service";
 
 const Post = ({ post, my }) => {
   const { id, user, date, title, description, image, likes, comments } = post;
-  const [editPost, setEditPost] = useState(false);
-  const contentState = stateFromHTML(createContent());
-  console.log(contentState);
-  const [editorState, setEditorState] = useState(EditorState.createWithContent(
-    contentState
-  ));
+  const [onEditPost, setOnEditPost] = useState(false);
+  const contentState = convertFromHTML(createContent());
+  const defaultState = EditorState.createWithContent(
+    ContentState.createFromBlockArray(contentState)
+  );
+  const [editorState, setEditorState] = useState(defaultState);
   const { nickname } = user;
   const homepage = process.env.PUBLIC_URL;
-  const handleEditPost = () => {
-    setEditPost(true);
+  const handleOnEditPost = () => {
+    setOnEditPost(true);
   };
   function createContent() {
     let context = "";
-    if (title) context += `<h2>${title}</h2>`;
+    if (title) context += `<h2><strong>${title}</strong></h2>`;
     if (description) context += `<p>${description}</p>`;
     return context;
   }
-
-  useEffect(() => {
+  const handleEditPost = () => {
     const contentState = editorState.getCurrentContent();
     const rawContentState = convertToRaw(contentState);
-    console.log(draftToHtml(rawContentState));
-  }, [editorState]);
+    const newContent = draftToHtml(rawContentState).replace("\n", "").slice(0, -1);
+    httpService.put(
+      `http://localhost:5000/api/v1/post/${id}`,
+      {
+        newContent
+      }
+    )
+      .then(res => console.log(res))
+      .catch(error => console.log(error));
+  };
   return (
     <>
       <div className="p-6 bg-white rounded-xl flex flex-col gap-4 text-base">
@@ -56,7 +64,7 @@ const Post = ({ post, my }) => {
                   postId={id}
                   list={
                     [
-                      { text: "Изменить", action: handleEditPost },
+                      { text: "Изменить", action: handleOnEditPost },
                       { text: "Удалить", action: "123" }
                     ]
                   }
@@ -98,12 +106,12 @@ const Post = ({ post, my }) => {
           </div>
         </div>
       </div>
-      {editPost && (
-        <ModalWindow handleClose={setEditPost}>
+      {onEditPost && (
+        <ModalWindow handleClose={setOnEditPost}>
           <div className="flex flex-col h-full">
             <EditorPost editorState={editorState} setEditorState={setEditorState}/>
-            <div className="ml-9 h-full flex items-end">
-              <BigButton disabled={true}>Изменить</BigButton>
+            <div className="ml-9 mt-auto h-full flex items-end">
+              <BigButton onClick={handleEditPost}>Изменить</BigButton>
             </div>
           </div>
         </ModalWindow>
@@ -116,7 +124,7 @@ Post.propTypes = {
   post: PropTypes.shape({
     id: PropTypes.number.isRequired,
     date: PropTypes.string.isRequired,
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
     description: PropTypes.string,
     image: PropTypes.string,
     likes: PropTypes.number.isRequired,

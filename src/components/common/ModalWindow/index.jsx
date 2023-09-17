@@ -16,7 +16,7 @@ const ModalWindow = ({ children, handleClose }) => {
       <div className="relative bg-white p-5 rounded-lg w-full max-w-screen-lg min-h-[70%]">
         <button
           onClick={() => handleClose(false)}
-          className="absolute top-5 right-5">
+          className="absolute top-5 right-5 z-10">
           <Icon name="close" className="w-7 h-7" />
         </button>
         {children}
