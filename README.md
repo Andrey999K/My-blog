@@ -1,4 +1,4 @@
-Demo: https://andrey999k.github.io/my-blog/
+Demo: https://andrey999k.github.io/sibl-client/
 
 # Getting Started with Create React App
 
